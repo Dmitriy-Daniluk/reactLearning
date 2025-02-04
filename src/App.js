@@ -5,7 +5,10 @@ import React from 'react';
 
 function App() {
 	return <div>
-		text
+		lorem text for test
+		<p class="first">lorem text</p>
+		<p class="second">lorem text</p>
+		<p class="third">lorem text</p>
 	</div>;
 }
 
