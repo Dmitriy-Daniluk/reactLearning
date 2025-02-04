@@ -3,48 +3,35 @@ import './App.css';
 
 import React from 'react';
 
-function App() {
-	return (
-		<>
-		<div>
-			<h1>№1</h1>
-			<ul>
-				<li>text</li>
-				<li>text</li>
-				<li>text</li>
-				<li>text</li>
-				<li>text</li>
-				<li>text</li>
-				<li>text</li>
-				<li>text</li>
-				<li>text</li>
-				<li>text</li>
-			</ul>
-		</div>
 
-		<div>
-			<h1>№2</h1>
-			<table>
-				<tbody>
-					<tr>
-						<td>1</td>
-						<td>2</td>
-						<td>3</td>
-					</tr>
-					<tr>
-						<td>4</td>
-						<td>5</td>
-						<td>6</td>
-					</tr>
-					<tr>
-						<td>7</td>
-						<td>8</td>
-						<td>9</td>
-					</tr>
-				</tbody>
-			</table>
-		</div>
-		</>
-	);
+function App() {
+	const num1 = 3;
+	const num2 = 2;
+
+	return <div>
+		result: {num1 ** num2}
+		{/* result: 9 */}
+	</div>;
 }
+
+// function App() {
+// 	const name = 'john';
+// 	const surname = 'smit';
+	
+// 	return <div>
+// 		result: {name + ' ' + surname}
+// 		{/* result: john smit */}
+// 	</div>;
+// }
+	
+	
+// function App() {
+// 	const num = 4;
+
+// 	return <div>
+// 		result: {Math.sqrt(num)}
+// 		{/* result: 2 */}
+// 	</div>;
+// }
+
 export default App;
