@@ -4,12 +4,18 @@ import './App.css';
 import React from 'react';
 
 function App() {
-	return <div>
-		lorem text for test
-		<p class="first">lorem text</p>
-		<p class="second">lorem text</p>
-		<p class="third">lorem text</p>
-	</div>;
+	return <ul>
+			<li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Distinctio eos, consequuntur itaque ipsum vero veniam magnam libero sequi obcaecati cumque dolores iusto recusandae voluptas quas rem perferendis. Velit, eligendi sed!</li>
+			<li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Distinctio eos, consequuntur itaque ipsum vero veniam magnam libero sequi obcaecati cumque dolores iusto recusandae voluptas quas rem perferendis. Velit, eligendi sed!</li>
+			<li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Distinctio eos, consequuntur itaque ipsum vero veniam magnam libero sequi obcaecati cumque dolores iusto recusandae voluptas quas rem perferendis. Velit, eligendi sed!</li>
+			<li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Distinctio eos, consequuntur itaque ipsum vero veniam magnam libero sequi obcaecati cumque dolores iusto recusandae voluptas quas rem perferendis. Velit, eligendi sed!</li>
+			<li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Distinctio eos, consequuntur itaque ipsum vero veniam magnam libero sequi obcaecati cumque dolores iusto recusandae voluptas quas rem perferendis. Velit, eligendi sed!</li>
+			<li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Distinctio eos, consequuntur itaque ipsum vero veniam magnam libero sequi obcaecati cumque dolores iusto recusandae voluptas quas rem perferendis. Velit, eligendi sed!</li>
+			<li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Distinctio eos, consequuntur itaque ipsum vero veniam magnam libero sequi obcaecati cumque dolores iusto recusandae voluptas quas rem perferendis. Velit, eligendi sed!</li>
+			<li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Distinctio eos, consequuntur itaque ipsum vero veniam magnam libero sequi obcaecati cumque dolores iusto recusandae voluptas quas rem perferendis. Velit, eligendi sed!</li>
+			<li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Distinctio eos, consequuntur itaque ipsum vero veniam magnam libero sequi obcaecati cumque dolores iusto recusandae voluptas quas rem perferendis. Velit, eligendi sed!</li>
+			<li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Distinctio eos, consequuntur itaque ipsum vero veniam magnam libero sequi obcaecati cumque dolores iusto recusandae voluptas quas rem perferendis. Velit, eligendi sed!</li>
+		</ul>;
 }
 
 export default App;
