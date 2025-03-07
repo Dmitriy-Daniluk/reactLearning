@@ -5,33 +5,19 @@ import React from 'react';
 
 
 function App() {
-	const num1 = 3;
-	const num2 = 2;
-
+	let text;
+	const isAdult = true;
+	
+	if (isAdult) {
+		text = <p>Совершеннолетний</p>;
+	} else {
+		text = <p>Не Совершеннолетний</p>;
+	}
+	
 	return <div>
-		result: {num1 ** num2}
-		{/* result: 9 */}
+		{text}
 	</div>;
 }
 
-// function App() {
-// 	const name = 'john';
-// 	const surname = 'smit';
-	
-// 	return <div>
-// 		result: {name + ' ' + surname}
-// 		{/* result: john smit */}
-// 	</div>;
-// }
-	
-	
-// function App() {
-// 	const num = 4;
-
-// 	return <div>
-// 		result: {Math.sqrt(num)}
-// 		{/* result: 2 */}
-// 	</div>;
-// }
 
 export default App;
