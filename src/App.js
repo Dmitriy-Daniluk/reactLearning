@@ -5,17 +5,10 @@ import React from 'react';
 
 
 function App() {
-	let text;
-	const isAdmin = true;
-	
-	if (isAdmin) {
-		text = <div>
-			Вы администратор <br></br> хорошего дня
-		</div>;
-	} 
+	const age = 19;
 	
 	return <div>
-		{text}
+		{age >= 18 ? <p>Вам 18 или больше</p> : <p>Меньше 18 лет</p>}
 	</div>;
 }
 
