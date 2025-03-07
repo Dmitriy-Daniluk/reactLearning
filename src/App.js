@@ -14,9 +14,7 @@ function App() {
 		return sum;
 	}
 	
-	const sum = getDigitsSum(123);
-	
-	return <div>{sum}</div>;
+	return <div>{getDigitsSum(12345)}</div>;
 }
 
 
