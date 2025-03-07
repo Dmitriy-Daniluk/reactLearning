@@ -6,13 +6,13 @@ import React from 'react';
 
 function App() {
 	let text;
-	const isAdult = true;
+	const isAdmin = true;
 	
-	if (isAdult) {
-		text = <p>Совершеннолетний</p>;
-	} else {
-		text = <p>Не Совершеннолетний</p>;
-	}
+	if (isAdmin) {
+		text = <div>
+			Вы администратор <br></br> хорошего дня
+		</div>;
+	} 
 	
 	return <div>
 		{text}
