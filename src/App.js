@@ -5,11 +5,18 @@ import React from 'react';
 
 
 function App() {
-	const isAuth = false;
+	function getDigitsSum(num) {
+		let sum = 0;
+		while (num > 0) {
+			sum += num % 10;
+			num = Math.floor(num / 10);
+		}
+		return sum;
+	}
 	
-	return <div>
-		{!isAuth && <p>пожалуйста, авторизуйтесь</p>}
-	</div>;
+	const sum = getDigitsSum(123);
+	
+	return <div>{sum}</div>;
 }
 
 
