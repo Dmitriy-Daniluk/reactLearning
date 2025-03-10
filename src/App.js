@@ -5,15 +5,16 @@ import React from 'react';
 
 
 function App() {
-	function showMess(text) {
-		alert(text);
+	function handleClick(event) {
+		console.log(event);
+		console.log(event.target);
 	}
 
-	return <div>
-		<button onClick={() => showMess('1')}>act1</button>
-		<button onClick={() => showMess('2')}>act2</button>
-		<button onClick={() => showMess('3')}>act3</button>
-	</div>;
+	return (
+		<div>
+			<button onClick={handleClick}>act</button>
+		</div>
+	);
 }
 
 
