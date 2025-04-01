@@ -7,20 +7,22 @@ import { useState } from 'react';
 
 
 function App() {
-	const [count, setCount] = useState(0);
+	const [value, setValue] = useState('text');
+	const [value2, setValue2] = useState('text');
 	
-	function clickLow() {
-		setCount(count - 1);
+	function handleChange(event) {
+		setValue(event.target.value); 
 	}
-	function clickUp() {
-		setCount(count + 1);
+
+	function handleChange2(event) {
+		setValue2(event.target.value); 
 	}
-	
 	
 	return <div>
-		<span>{count}</span>
-		<button onClick={clickUp}>увеличить значение</button>
-		<button onClick={clickLow}>уменьшить значение</button>
+		<input value={value} onChange={handleChange} />
+		<p>text1: {value}</p>
+		<input value={value2} onChange={handleChange2} />
+		<p>text2: {value2}</p>
 	</div>;
 }
 
