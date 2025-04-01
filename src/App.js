@@ -5,17 +5,18 @@ import React from 'react';
 
 
 function App() {
-	const arr = [
-		<li>1</li>,
-		<li>2</li>,
-		<li>3</li>,
-		<li>4</li>,
-		<li>5</li>,
-	];
-
+	const arr = [];
+	
+	for (let i = 1; i <= 5; i++) {
+		arr.push(<li>{i}</li>);
+	}
+	
+	
 	return <div>
-		{arr}
-	</div>
+		<ul>
+			{arr}
+		</ul>
+	</div>;
 }
 
 
