@@ -6,47 +6,41 @@ import { useState } from 'react';
 
 
 function App() {
-	const [checked, setChecked] = useState(false);
-	const [message, setMessage] = useState('');
+	const [checked, setChecked] = useState(true);
+	let message;
+	const [checked2, setChecked2] = useState(true);
+	let message2;
 
-	const [checked1, setChecked1] = useState(false);
-	const [checked2, setChecked2] = useState(false);
-	const [checked3, setChecked3] = useState(false);
-
-	function show() {
-		if (checked) {
-			setMessage('Нажат');
-		} else {
-			setMessage('Не нажат');
-		}
+	if (checked2) {
+		message2 = <p>Новый текст</p>
 	}
 
-	return (
+	if (checked) {
+		message = <div>
+			<h2>Вам 18 и больше</h2>
+			<p>только если больше 18 лет</p>
+		</div>;
+	} else {
+		message = <div>
+			<p>слишком молод</p>
+		</div>;
+	}
+
+
+	return <div>
 		<div>
-			<div>
-				Задание 1:
-				<input type="checkbox" checked={checked} onChange={() => setChecked(!checked)} />
-				<p>состояние: {checked ? 'нажат' : 'не нажат'}</p>
-				<button onClick={show}>Показать сообщение</button>
-				<p>{message}</p>
-			</div>
-			<div>
-				Задание 2: <br />
-				Выберите языки программирования, которые вы знаете: <br />
-				Если вы знаете html, проставте галочку:
-				<input type="checkbox" checked={checked1} onChange={() => setChecked1(!checked1)} />
-				{checked1 ? <p>О, супер. Вы знаете html, жаль что это не язык программирования</p> : <p>не отмечен</p>}
-
-				Если вы знаете js, проставте галочку:
-				<input type="checkbox" checked={checked2} onChange={() => setChecked2(!checked2)} />
-				{checked2 ? <p>О, супер. Вы знаете js</p> : <p>не отмечен</p>}
-
-				Если вы знаете css, проставте галочку:
-				<input type="checkbox" checked={checked3} onChange={() => setChecked3(!checked3)} />
-				{checked3 ? <p>О, супер. Вы знаете css, жаль что это не язык программирования</p> : <p>не отмечен</p>}
-			</div>
+			Задание 1: <br />
+			Подтвердите, что вам есть 18 лет:
+			<input type="checkbox" checked={checked} onChange={() => setChecked(!checked)} />
+			<div>{message}</div>
 		</div>
-	);
+		<div>
+			Задание 2: <br />
+			Попробуйте нажать на галочку:
+			<input type="checkbox" checked={checked2} onChange={() => setChecked2(!checked2)} />
+			<div>{message2}</div>
+		</div>
+	</div>;
 }
 
 
