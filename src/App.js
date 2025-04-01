@@ -7,23 +7,18 @@ import { useState } from 'react';
 
 
 function App() {
-	const [value, setValue] = useState('text');
-	const [value2, setValue2] = useState('text');
-	
-	function handleChange(event) {
-		setValue(event.target.value); 
-	}
+	const [value, setValue] = useState('');
 
-	function handleChange2(event) {
-		setValue2(event.target.value); 
+	function handleChange(event) {
+		setValue(event.target.value);
 	}
 	
-	return <div>
-		<input value={value} onChange={handleChange} />
-		<p>text1: {value}</p>
-		<input value={value2} onChange={handleChange2} />
-		<p>text2: {value2}</p>
-	</div>;
+	return (
+		<div>
+			<input value={value} onChange={handleChange} />
+			<p>Количество символов в строке: {value.length}</p>
+		</div>
+	);
 }
 
 
