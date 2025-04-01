@@ -7,34 +7,44 @@ import { useState } from 'react';
 
 
 function App() {
-	const [age, setAge] = useState(0);
-	const currentYear = new Date().getFullYear();
+	const [value1, setValue1] = useState(0);
+	const [value2, setValue2] = useState(0);
+	const [value3, setValue3] = useState(0);
+	const [value4, setValue4] = useState(0);
+	const [value5, setValue5] = useState(0);
 
-	function handleChange(event) {
-		setAge(event.target.value);
+	function handleChange1(event) {
+		setValue1(+event.target.value);
 	}
-
-	const [fahrenheit, setFahrenheit] = useState(0);
 
 	function handleChange2(event) {
-		setFahrenheit(event.target.value);
+		setValue2(+event.target.value);
 	}
 
-	const birthYear = currentYear - age;
-	const celsius = (fahrenheit - 32) * 5 / 9;
+	function handleChange3(event) {
+		setValue3(+event.target.value);
+	}
+
+	function handleChange4(event) {
+		setValue4(+event.target.value);
+	}
+
+	function handleChange5(event) {
+		setValue5(+event.target.value);
+	}
+
+	const sum = value1 + value2 + value3 + value4 + value5;
+	const average = sum / 5;
 
 	return (
-		<>
-			<div>
-				<input type="number" value={age} onChange={handleChange} placeholder="Введите ваш возраст" />
-				<p>Ваш год рождения: {birthYear}</p>
-			</div>
-			<div>
-				<input
-					type="number" value={fahrenheit} onChange={handleChange2} placeholder="Введите градусы Фаренгейта" />
-				<p>Градусы Цельсия: {celsius.toFixed(2)}</p>
-			</div>
-		</>
+		<div>
+			<input type="number" value={value1} onChange={handleChange1} />
+			<input type="number" value={value2} onChange={handleChange2} />
+			<input type="number" value={value3} onChange={handleChange3} />
+			<input type="number" value={value4} onChange={handleChange4} />
+			<input type="number" value={value5} onChange={handleChange5} />
+			<p>Average: {isNaN(average) ? 0 : average}</p>
+		</div>
 	);
 }
 
