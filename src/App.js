@@ -6,25 +6,22 @@ import { useState } from 'react';
 
 
 function App() {
+	const texts = ['Симферополь', 'Не Симферополь', 'Москва', 'Не Москва'];
 	const [value, setValue] = useState('');
 	
-	function handleChange(event) {
-		setValue(event.target.value);
-	}
+	const options = texts.map((text, index) => {
+	return <option key={index}>{text}</option>;
+	});
 	
 	return <div>
-		<select value={value} onChange={handleChange}>
-			<option>Симферополь</option>
-			<option>Не Симферополь</option>
-			<option>Москва</option>
-			<option>Не Москва</option>
+		<select value={value} onChange={(event) => setValue(event.target.value)}>
+			{options}
 		</select>
 		<p>
-			ваш город: {value}
+			ваш выбор: {value}
 		</p>
 	</div>;
 }
-
 
 
 export default App;
