@@ -2,26 +2,22 @@ import logo from './logo.svg';
 import './App.css';
 
 import { nanoid } from 'nanoid'; 
-	
-function id() {
-  return nanoid(); 
-}
+import { useState } from 'react';
+
+
 
 function App() 
 {
-	const prods = [
-		{id: id(), name: 'product1', cost: 100},
-		{id: id(), name: 'product2', cost: 200},
-		{id: id(), name: 'product3', cost: 300},
-	];
-	
-	const res = prods.map(function(item) {
-			return <p key={item.id}>{item.name}: {item.cost}</p>;
-	});	
-
+	const [name_user, setName1] = useState('Дмитрий');
+	const [group, setName2] = useState('И-2-23');
+	const [age, setName3] = useState('18');
+	const changeName = () => {
+		setName1('Измененное имя');
+	};
   return (
     <div>
-      {res}
+      Имя пользователя: {name_user}, группа: {group}, его возраст: {age} <br />
+	  <button onClick={changeName}>Изменить имя</button>
     </div>
   );
 }
