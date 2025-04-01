@@ -6,20 +6,19 @@ import { useState } from 'react';
 
 
 
-function App() 
-{
-	const [name_user, setName1] = useState('Дмитрий');
-	const [surname_user, setName2] = useState('Данилюк');
-	const changeName = () => {
-		setName1('Измененное имя');
-	};
-  return (
-    <div>
-      Имя пользователя: {name_user} {surname_user}<br />
-			<button onClick={changeName}>Изменить имя</button>
-			<button onClick={() => setName2('Измененная фамилия')}>Изменить фамилию</button>
-    </div>
-  );
+function App() {
+	const [isBanned, setIsBanned] = useState(false);
+	
+	return (
+		<div>
+			<span>{isBanned ? 'Пользователь заблокирован' : 'Пользователь не заблокирован'}</span>
+			{isBanned ? (
+				<button onClick={() => setIsBanned(false)}>Разбанить</button>
+			) : (
+				<button onClick={() => setIsBanned(true)}>Забанить</button>
+			)}
+		</div>
+	);
 }
 
 
