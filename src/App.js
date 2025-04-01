@@ -1,37 +1,33 @@
 import logo from './logo.svg';
 import './App.css';
 
-import React from 'react';
+import { nanoid } from 'nanoid';
+import { v4 as uuidv4 } from 'uuid';
 
+function App() 
+{
+  const randomIdsNanoid = Array.from({ length: 5 }, () => nanoid());
+  const randomIdsUUID = Array.from({ length: 5 }, () => uuidv4());
 
-function App() {
-	const users = [
-		{id: 1, name: 'name1', surn: 'surn1', age: 30},
-		{id: 2, name: 'name2', surn: 'surn2', age: 31},
-		{id: 3, name: 'name3', surn: 'surn3', age: 32},
-	];
+  return (
+    <div>
+      <h2>Случайные строки библиотеки nanoid:</h2>
+      <ul>
+        {randomIdsNanoid.map(id => (
+          <li key={id}>{id}</li>
+        ))}
+      </ul>
 
-	const rows = users.map(function(item) {
-		return <tr key={item.id}>
-			<td>{item.name}</td>
-			<td>{item.surn}</td>
-			<td>{item.age}</td>
-		</tr>;
-	});
-	
-	return <table>
-		<thead>
-			<tr>
-				<td> имя </td>
-				<td> фамилия </td>
-				<td> возраст </td>
-			</tr>
-		</thead>
-		<tbody>
-			{rows}
-		</tbody>
-	</table>;
+      <h2>Случайные строки библиотеки uuid:</h2>
+      <ul>
+        {randomIdsUUID.map(id => (
+          <li key={id}>{id}</li>
+        ))}
+      </ul>
+    </div>
+  );
 }
+
 
 
 export default App;
