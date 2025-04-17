@@ -1,9 +1,13 @@
 import React from 'react';
 
-function Product() {
-	return <p>
-		user
-	</p>;
+function User({ name, surn, age }) {
+    return (
+        <tr>
+            <td>{name}</td>
+            <td>{surn}</td>
+            <td>{age}</td>
+        </tr>
+    );
 }
 
-export default Product;
+export default User;
