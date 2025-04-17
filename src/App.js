@@ -3,10 +3,14 @@ import './App.css';
 
 import React, { useState } from 'react';
 import Product from './Product'; // импортируем продукт
+import User from './User'; // импортируем user
 
 function App() {
 	return <div>
-		<Product />
+		<User />
+		<User />
+		<User />
+		<User />
 	</div>;
 }
 
