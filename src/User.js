@@ -1,14 +1,14 @@
 import React from 'react';
 
-function User({ id, name, surname, age }) {
-    return (
-        <div>
-            Id: <span>{id}</span>,
-            Имя: <span>{name}</span>,
-            Фамилия: <span>{surname}</span>,
-            Возраст: <span>{age}</span>
-        </div>
-    );
-}
+const User = ({ user, onBan }) => {
+	return (
+			<div>
+					<h2>{user.name}</h2>
+					<p>ID: {user.id}</p>
+					<p>Email: {user.email}</p>
+					<button onClick={() => onBan(user.id)}>Забанить пользователя</button> 
+			</div>
+	);
+};
 
 export default User;
