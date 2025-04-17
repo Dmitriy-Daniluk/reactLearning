@@ -12,7 +12,7 @@ function Users() {
     
     const userItems = users.map(user => (
         <User 
-            key={user.id}
+            id={user.id}
             name={user.name}
             surname={user.surname}
             age={user.age}
