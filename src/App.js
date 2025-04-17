@@ -3,86 +3,54 @@ import './App.css';
 
 import React, { useState } from 'react';
 
+import { nanoid } from 'nanoid'; 
+
 const initNotes = [
-  { id: 1, prop1: 'Note 1', prop2: 'Details 1', prop3: 'Extra 1' },
-  { id: 2, prop1: 'Note 2', prop2: 'Details 2', prop3: 'Extra 2' },
+  {
+    id: nanoid(), 
+    name: 'name1',
+    desc: 'long description 1',
+    show: false,
+  },
+  {
+    id: nanoid(),
+    name: 'name2',
+    desc: 'long description 2',
+    show: false,
+  },
+  {
+    id: nanoid(),
+    name: 'name3',
+    desc: 'long description 3',
+    show: false,
+  },
 ];
 
 function App() {
   const [notes, setNotes] = useState(initNotes);
-  const [selectedNote, setSelectedNote] = useState({});
 
-  function doSmth(id) {
-    setNotes(notes.map(note => {
-      if (note.id === id) {
-        note.prop1 += '!';
-        note.prop2 += '!';
-        note.prop3 += '!';
-      }
-      return note;
-    }));
-  }
+  const toggleDescription = (id) => {
+    setNotes(notes.map(note => 
+      note.id === id ? { ...note, show: !note.show } : note
+    ));
+  };
 
-  function deleteNote(id) {
-    setNotes(notes.filter(note => note.id !== id));
-  }
-
-  function fillInputs(note) {
-    setSelectedNote(note);
-  }
-
-  function saveChanges() {
-    setNotes(notes.map(note => {
-      if (note.id === selectedNote.id) {
-        return selectedNote;
-      }
-      return note;
-    }));
-    setSelectedNote({});
-  }
-
-  const result = notes.map(note => {
-    return (
-      <li key={note.id}>
-        <span>{note.prop1}</span>
-        <span>{note.prop2}</span>
-        <span>{note.prop3}</span>
-        
-        <button onClick={() => doSmth(note.id)}>Кнопочка</button>
-        <button onClick={() => deleteNote(note.id)}>Удалить</button>
-        <button onClick={() => fillInputs(note)}>Изменения</button>
-      </li>
-    );
-  });
+  const result = notes.map(note => (
+    <p key={note.id}>
+      {note.name}, 
+      {note.show && <i>{note.desc}</i>}
+      <button onClick={() => toggleDescription(note.id)}>
+        {note.show ? 'Скрыть описание' : 'Показать описание'}
+      </button>
+    </p>
+  ));
 
   return (
     <div>
-      <ul>
-        {result}
-      </ul>
-      <div>
-        <input
-          type="text"
-          value={selectedNote.prop1 || ''}
-          onChange={e => setSelectedNote({ ...selectedNote, prop1: e.target.value })}
-          placeholder="Prop1"
-        />
-        <input
-          type="text"
-          value={selectedNote.prop2 || ''}
-          onChange={e => setSelectedNote({ ...selectedNote, prop2: e.target.value })}
-          placeholder="Prop2"
-        />
-        <input
-          type="text"
-          value={selectedNote.prop3 || ''}
-          onChange={e => setSelectedNote({ ...selectedNote, prop3: e.target.value })}
-          placeholder="Prop3"
-        />
-        <button onClick={saveChanges}>Сохранить изменения</button>
-      </div>
+      {result}
     </div>
   );
 }
+
 
 export default App;
