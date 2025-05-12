@@ -17,35 +17,17 @@ import React, { useState } from 'react';
 
 // import { styles } from "./styles";
 
-import styled from "styled-components";
+// import styled from "styled-components";
 
 // import Block from "./Block";
 
-const DIVA = styled.div`
-  width: 150px;
-  height: 150px;
-  background-color: yellow;
-  border: 2px solid black; 
-`;
-
-const DIVB = styled(DIVA)`
-  background-color: green; 
-  border-width: 3px; 
-`;
-
-const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center; 
-`;
+import Checklist from './Checklist';
 
 function App() {
 	return (
-		<Container>
-			<DIVA />
-			<DIVB />
-			<DIVA />
-		</Container>
+		<div className="App">
+			<Checklist />
+		</div>
 	);
 }
 
