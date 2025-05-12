@@ -7,44 +7,24 @@ import React, { useState } from 'react';
 // import Product from './Product'; // импортируем продукт
 // import Employee from './Employee'; // Импортируем компонент Employee
 
-import TempInp from './TempInp';
-import Verdict from './Verdict';
+// import TempInp from './TempInp';
+// import Verdict from './Verdict';
 
-import Calculator from './Calculator';
-import TemperatureConverter from './TemperatureConverter';
+// import Calculator from './Calculator';
+// import TemperatureConverter from './TemperatureConverter';
 
-import './styles.css';
+// import './styles.css';
+
+import { styles } from "./styles";
 
 function App() {
-	const class1 = {
-		width: '200px',
-		border: '2px solid brown',
-		padding: '10px',
-		textAlign: 'center',
-	};
-
-	const class2 = {
-		color: 'orangered',
-		fontWeight: 'bold',
-	};
-
-	const class3 = {
-		fontStyle: 'italic',
-		color: 'brown',
-	};
-
-	const class4 = {
-		backgroundColor: 'orange',
-		fontWeight: 'bold',
-		color: 'white',
-	};
-
 	return (
-		<div style={class1}>
-			<button style={class2}>text</button>
-			<button style={class3}>text</button>
+		<div style={styles.class1}>
+			<button style={styles.class2}>text</button>
+			<button style={styles.class3}>text</button>
 		</div>
 	);
 }
+
 
 export default App;
