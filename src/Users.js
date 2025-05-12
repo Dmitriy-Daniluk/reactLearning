@@ -1,14 +1,37 @@
-import React from 'react';
+import React, { useState } from 'react';
 import User from './User';
 
-const Users = ({ users, onBan, onEdit, UserField }) => {
+function Users({ initUsers }) {
+	const [users, setUsers] = useState(initUsers);
+
+	function changeField(id, field, event) {
+		setUsers(users.map(user => {
+			if (user.id === id) {
+				user[field] = event.target.value;
+			}
+			return user;
+		}));
+	}
+
+	const rows = users.map(user => (
+		<User
+			key={user.id}
+			id={user.id}
+			name={user.name}
+			email={user.email}
+			changeField={changeField}
+		/>
+	));
+
 	return (
 		<div>
-			{users.map(user => (
-				<User key={user.id} user={user} onBan={onBan} onEdit={onEdit} UserField={UserField} />
-			))}
+			<table>
+				<tbody>
+					{rows}
+				</tbody>
+			</table>
 		</div>
 	);
-};
+}
 
 export default Users;
